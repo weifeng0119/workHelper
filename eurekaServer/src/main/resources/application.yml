@@ -1,0 +1,10 @@
+server:
+  port: 7073
+eureka:
+  client:
+    service-url:
+      #defaultZone: http://localhost:7070/eureka/
+      defaultZone: http://user:123456@localhost:7070/eureka
+spring:
+  application:
+    name: eurekaServer

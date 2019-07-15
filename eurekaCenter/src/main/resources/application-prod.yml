@@ -1,0 +1,24 @@
+server:
+  port: 8080
+# dev close self-preservation,prod open self-preservation#
+eureka:
+  server:
+    enable-self-preservation: true
+    #raise self--preservation
+    renewal-percent-threshold: 0.49
+  instance:
+    hostname: localhost
+    #raise self--preservation
+    lease-expiration-duration-in-seconds: 30
+  client:
+    # whether register self #
+    register-with-eureka: false
+    # whether pull eureka register info #
+    fetch-registry: false
+    service-url:
+      defaultZone: http://user:123456@${eureka.instance.hostname}:${server.port}/eureka/
+spring:
+  security:
+    user:
+      name: user
+      password: 123456

@@ -1,0 +1,24 @@
+server:
+  port: 7070
+# dev close self-preservation,prod open self-preservation#
+eureka:
+  server:
+    enable-self-preservation: false
+    # whether use rest cache
+    use-read-only-response-cache: false
+    # reduce rest cache time
+    response-cache-auto-expiration-in-seconds: 90
+  instance:
+    hostname: localhost
+  client:
+    # whether register self #
+    register-with-eureka: false
+    # whether pull eureka register info #
+    fetch-registry: false
+    service-url:
+      defaultZone: http://user:123456@${eureka.instance.hostname}:${server.port}/eureka/
+spring:
+  security:
+    user:
+      name: user
+      password: 123456

@@ -1,0 +1,16 @@
+server:
+  port: 7072
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:123456@localhost:7070/eureka/
+    # raise fetch rate
+    registry-fetch-interval-seconds: 5
+spring:
+  application:
+    name: eurekaClient
+feign:
+    httpclient:
+      enabled: false
+    okhttp:
+      enabled: true
